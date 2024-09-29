@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Love me?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-sizing: border-box;
+            text-transform: uppercase;
+
+        }
+
+        .bogy {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            width: 100vw;
+            min-height: 100vh;
+            background: #07041e;
+            padding: 5%;
+            align-content: center;
+        }
+
+        .bogy h1 {
+            color: #ff001e;
+            margin-top: 30vh;
+            font-size: 10vmin
+        }
+
+        .opt {
+            display: flex;
+            size: 50vh;
+            flex-wrap: nowrap;
+        }
+
+        /* From Uiverse.io by gharsh11032000 */
+        .radio-buttons-container {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .radio-button {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .radio-button__input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .radio-button__label {
+            display: inline-block;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            position: relative;
+            font-size: 16px;
+            color: #ee259a;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .radio-button__custom {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #280a33;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .radio-button__input:checked+.radio-button__label .radio-button__custom {
+            transform: translateY(-50%) scale(0.9);
+            border: 5px solid #aa0707;
+            color: #aa0707;
+        }
+
+        .radio-button__input:checked+.radio-button__label {
+            color: #ff102c;
+        }
+
+        .radio-button__label:hover .radio-button__custom {
+            transform: translateY(-50%) scale(1.2);
+            border-color: #ff24a4;
+            box-shadow: 0 0 10px #ff24a4;
+        }
+    </style>
+    <script>
+        function hand(){
+           setTimeout(function(){
+            if (document.getElementById('radio1').checked){
+                document.getElementById('radio1').checked=false;
+                document.getElementById('radio2').checked=true;
+            }
+        }, 400);
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class=bogy>
+        <h1>Do YOu love me?</h1>
+        <div class="radio-buttons-container">
+            <div class="radio-button">
+                <input name="radio-group" id="radio2" class="radio-button__input" type="radio" onclick="hand()">
+                <label for="radio2" class="radio-button__label">
+                    <span class="radio-button__custom"></span>
+
+                    Yes
+                </label>
+            </div>
+            <div class="radio-button">
+                <input name="radio-group" id="radio1" class="radio-button__input" type="radio" onclick="hand()">
+                <label for="radio1" class="radio-button__label">
+                    <span class="radio-button__custom"></span>
+
+                    no
+                </label>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
